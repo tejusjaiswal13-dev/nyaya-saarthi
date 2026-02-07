@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+
+@theme {
+    --color-primary: #1a365d;
+    --color-secondary: #c53030;
+    --color-accent: #ed8936;
+}
+
+@layer base {
+    body {
+        @apply bg-gray-50 text-gray-900 font-sans;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-bold text-gray-800;
+    }
+}
