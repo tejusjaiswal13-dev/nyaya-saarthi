@@ -32,9 +32,9 @@ const LegalChat = () => {
         setLoading(true);
 
         try {
-            // Using the unified chat endpoint (formerly urgency/analyze logic merged)
-            // Use environment variable for production, fallback to localhost for dev
-            const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+            // Using the unified chat endpoint
+            // If VITE_API_URL is set (external backend), use it. Otherwise, default to relative '/api' (same domain).
+            const API_URL = import.meta.env.VITE_API_URL || '';
             const response = await axios.post(`${API_URL}/api/chat`, {
                 message: userMsg.text
             });
